@@ -3,6 +3,7 @@
 
 aether
 asdcontrol
+alsa-utils
 avahi
 bash-completion
 bat
