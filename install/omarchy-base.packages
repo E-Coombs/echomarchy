@@ -89,6 +89,10 @@ omarchy-nvim
 omarchy-walker
 pamixer
 pinta
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
 playerctl
 plocate
 plymouth
@@ -99,6 +103,8 @@ python-gobject
 python-poetry-core
 python-terminaltexteffects
 qt5-wayland
+qpwgraph
+realtime-privileges
 ripgrep
 ruby
 rust
