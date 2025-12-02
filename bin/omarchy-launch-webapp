@@ -3,7 +3,7 @@
 browser=$(xdg-settings get default-web-browser)
 
 case $browser in
-google-chrome* | brave-browser* | microsoft-edge* | opera* | vivaldi* | helium*) ;;
+google-chrome* | microsoft-edge* | opera* | vivaldi* | helium*) ;;
 *) echo "No supported browser found. Please set a default browser." >&2; exit 1 ;;
 esac
 

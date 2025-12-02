@@ -35,7 +35,9 @@ pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
+qpwgraph
 qt6-wayland
+realtime-privileges
 sassc
 snapper
 webp-pixbuf-loader
