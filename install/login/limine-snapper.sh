@@ -9,14 +9,23 @@ EOF
 
   # Conf location is different between EFI and BIOS
   if [[ -n "$EFI" ]]; then
-    # Check USB location first, then regular EFI location
+    # Check USB location first, then regular EFI location, then standard Arch location
     if [[ -f /boot/EFI/BOOT/limine.conf ]]; then
       limine_config="/boot/EFI/BOOT/limine.conf"
-    else
+    elif [[ -f /boot/EFI/limine/limine.conf ]]; then
       limine_config="/boot/EFI/limine/limine.conf"
+    elif [[ -f /boot/limine.conf ]]; then
+      limine_config="/boot/limine.conf"
+    else
+      limine_config="/boot/limine/limine.conf"
     fi
   else
-    limine_config="/boot/limine/limine.conf"
+    # Check standard Arch location first, then subdirectory
+    if [[ -f /boot/limine.conf ]]; then
+      limine_config="/boot/limine.conf"
+    else
+      limine_config="/boot/limine/limine.conf"
+    fi
   fi
 
   # Double-check and exit if we don't have a config file for some reason
