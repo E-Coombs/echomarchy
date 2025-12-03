@@ -6,6 +6,10 @@ screensaver_in_focus() {
 
 exit_screensaver() {
   hyprctl keyword cursor:invisible false
+  # Restore screen brightness
+  if command -v brightnessctl &>/dev/null; then
+    brightnessctl -r >/dev/null 2>&1
+  fi
   pkill -x tte 2>/dev/null
   pkill -f org.omarchy.screensaver 2>/dev/null
   exit 0

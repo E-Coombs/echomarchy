@@ -16,6 +16,11 @@ fi
 focused=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')
 terminal=$(xdg-terminal-exec --print-id)
 
+# Dim screen brightness (save current brightness for restore)
+if command -v brightnessctl &>/dev/null; then
+  brightnessctl -s set 10% >/dev/null 2>&1
+fi
+
 for m in $(hyprctl monitors -j | jq -r '.[] | .name'); do
   hyprctl dispatch focusmonitor $m
 
