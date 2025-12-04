@@ -7,5 +7,3 @@ export PATH=$OMARCHY_PATH/bin:$PATH
 # Set default terminal and editor
 source ~/.config/uwsm/default
 
-# Activate mise if present on the system
-omarchy-cmd-present mise && eval "$(mise activate bash)"
