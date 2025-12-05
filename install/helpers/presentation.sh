@@ -46,3 +46,9 @@ clear_logo() {
   printf "\033[H\033[2J" # Clear screen and move cursor to top-left
   gum style --foreground 2 --padding "1 0 0 $PADDING_LEFT" "$(<"$LOGO_PATH")"
 }
+
+# Wrapper for gum to work properly when stdout/stderr are redirected (e.g., in run_logged)
+# This ensures interactive gum commands can still communicate with the terminal
+gum() {
+  command gum "$@" </dev/tty >/dev/tty 2>&1
+}
