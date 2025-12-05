@@ -52,3 +52,4 @@ clear_logo() {
 gum() {
   command gum "$@" </dev/tty >/dev/tty 2>&1
 }
+export -f gum
